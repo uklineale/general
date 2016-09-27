@@ -1,0 +1,10 @@
+#build
+/app/build/
+# IntelliJ
+/app/out/
+.idea/
+*.iml
+*.iws
+/app/.gradle/2.10/taskArtifacts/*
+/app/.gradle/*
+.gradle/

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" th:href="@{/vendor/bootstrap/css/bootstrap.min.css}"/>
+        <link rel="stylesheet" th:href="@{/vendor/bootstrap/css/dashboard.css}"/>
+        <link rel="stylesheet" th:href="@{/vendor/bootstrap/css/autobahn-flat-min.css}"/>
+        <link rel="stylesheet" th:href="@{/css/index.css}"/>
+        <link rel="stylesheet" th:href="@{/css/search.css}"/>
+        <title>Sentimenty</title>
+        <link rel="shortcut icon" type="image/png" th:href="@{/img/logo.png}"/>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.3.0/annyang.min.js"></script>
+        <script th:src="@{/vendor/bootstrap/js/bootstrap.js}"/>
+        <script th:src="@{/js/index.js}"/>
+        <script>
+            if (annyang) {
+                var commands = {
+                    'search *term': search,
+                    'stock *length': stockVoice
+                };
+
+                annyang.addCommands(commands);
+            }
+        </script>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img alt="Brand" th:src="@{/img/logo2.png}" height="20px" width="20px" id="anny"/>
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-right" onsubmit="formSubmit();">
+                        <input type="text" class="form-control inputBar" id="searchTerm" placeholder="Search..."/>
+                        <a href="#" class="btn btn-default" id="openBtn">Search</a>
+                        <a href="#" class="btn btn-default" id="revertSort">Default</a>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="column">
+                    <div id="colOne"></div>
+                    <div th:id="${module.apiEndpoint} + 'Module'" class="portlet" th:each="module  : ${view.columnOne}">
+                        <div class="portlet-header" th:text="${module.title}"></div>
+                        <div class="portlet-content">
+                            <div th:include="${module.fragment} :: ${module.apiEndpoint}"></div>
+                        </div>
+                    </div>
+                </div></div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="column">
+                    <div id="colTwo"></div>
+                    <div th:id="${module.apiEndpoint} + 'Module'" class="portlet" th:each="module  : ${view.columnTwo}">
+                        <div class="portlet-header" th:text="${module.title}"></div>
+                        <div class="portlet-content">
+                            <div th:include="${module.fragment} :: ${module.apiEndpoint}"></div>
+                        </div>
+                    </div>
+                </div></div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="column">
+                    <div id="colThree"></div>
+                    <div th:id="${module.apiEndpoint} + 'Module'" class="portlet" th:each="module  : ${view.columnThree}">
+                        <div class="portlet-header" th:text="${module.title}"></div>
+                        <div class="portlet-content">
+                            <div th:include="${module.fragment} :: ${module.apiEndpoint}"></div>
+                        </div>
+                    </div>
+                </div></div>
+            </div>
+        </div>
+        <div id="modal-content" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h3>Search results for: <span class="resultsTerm"></span></h3>
+                        <span>Returned (</span><span id="resultsCount"></span><span>) results</span>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script th:src="@{/js/search.js}"/>
+    </body>
+</html>

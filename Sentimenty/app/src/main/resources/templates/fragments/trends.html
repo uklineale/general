@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:fragment="trends">
+            <div id="instructions">
+                <p>Select any combination of trends to see associated mentions.</p>
+            </div>
+            <div class="trend">
+                <!--Trend buttons are appended here-->
+            </div>
+
+            <!--Mentions are formatted here-->
+            <script id="clientTemplate" type="text/html">
+                <div class="mention hide article${trendNo}">
+                    <div class="mention-sentiment">
+                        <span class="glyphicon glyphicon-triangle-${arrow} ${color}"></span><br/>
+                        <p>${sentiment.score}</p>
+                    </div>
+                    <div class="mention-content">
+                        <a target="_blank" href="${url}">${title}</a>
+                        <p>${time}</p>
+                    </div>
+                </div>
+            </script>
+
+            <div class="mentionsContainer">
+                <div id="mentions">
+                    <!--Mentions are appended here-->
+                </div>
+            </div>
+            <link rel="stylesheet" href="/css/trends.css"/>
+            <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+            <script src="/js/trends.js"></script>
+        </div>
+    </body>
+</html>

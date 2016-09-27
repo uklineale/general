@@ -1,0 +1,44 @@
+.tweets {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 10px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.50);
+    min-height: 30%;
+}
+.tweetedAbout{
+    height: 300px;
+    overflow: scroll;
+}
+.text {
+    display: inline;
+    width:80%;
+    float:right;
+}
+.tweetText{
+    margin-top:2.2%;
+    color: #0d62a5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+
+    -webkit-line-clamp: 2;
+    -moz-line-clamp: 2;
+    -ms-line-clamp: 2;
+
+    -webkit-box-orient: vertical;
+    -moz-line-clamp: vertical;
+    -ms-line-clamp: vertical;
+}
+.picture {
+    display: inline-block;
+    text-align: center;
+    margin:2%;
+    width:15%;
+}
+.image{
+    height:75%;
+    width:75%;
+}

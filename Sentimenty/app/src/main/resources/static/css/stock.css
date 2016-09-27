@@ -1,0 +1,88 @@
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.focus circle {
+  fill: none;
+  stroke: steelblue;
+}
+
+.range button {
+  width: 23%;
+  padding: 0px;
+  height: 25px;
+}
+
+.range {
+  text-align: center;
+}
+
+.ticker button {
+  width: 49.1%;
+  height: 25px;
+}
+
+#current-price h3 {
+    display: inline;
+}
+
+#arrow.glyphicon {
+    font-size: 25px;
+    vertical-align: text-bottom;
+}
+
+.green {
+    color: #589f04;
+}
+
+.red {
+    color: #ee0000;
+}
+
+#close {
+    font-size: 42px;
+    font-weight: 500;
+}
+
+#current-price {
+    font-size: 20px;
+    line-height: 10px;
+}
+
+#closeStamp, #stockAg {
+    font-size: 10px;
+}
+
+
+.active {
+    background-color:#073459;
+    color: #e5f2f8;
+    font-weight:bold;
+}
+.btn:hover {
+    background-color:#66b4d7;
+    color: #e5f2f8;
+}
+.btn:focus {
+    background-color:#073459;
+    color:#e5f2f8;
+}

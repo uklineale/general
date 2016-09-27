@@ -1,0 +1,20 @@
+#sentiment-today {
+    display: inline;
+    font-size: 48px;
+}
+
+#sentiment-yesterday {
+    display: inline-block;
+}
+
+#sentiment-yesterday .val {
+    font-size: 14px;
+}
+
+.sent-container {
+    text-align: center;
+}
+
+#sentiment-yesterday .change {
+    font-size: 20px;
+}

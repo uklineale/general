@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="twitter">
+    <script id="twitterTemplate" type="text/html">
+    <div class="tweets">
+        <div class="picture">
+            <img class ="image" src="${image}" alt="Broken"/>
+        </div>
+        <div class="text">
+            <a target="_blank" class="tweetText" href="${url}">${text}</a>
+            <p>${created}</p>
+        </div>
+    </div>
+    </script>
+    <div class="tweetedAbout"></div>
+
+    <link rel="stylesheet" href="/css/twitter.css"/>
+    <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+    <script src="/js/twitter.js"></script>
+</div>
+</body>
+</html>

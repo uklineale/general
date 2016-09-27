@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="gauge">
+    <div id="power-gauge"></div>
+    <div class="sent-container">
+        <div id="sentiment-today"></div>
+        <div id="sentiment-yesterday">
+            <span class="change"></span><br/>
+            <span class="val"></span>
+        </div>
+    </div>
+
+    <script id="searchTemplate" type="text/html">
+        <div class="mention">
+            <div class="mention-sentiment">
+                <div class="searchThumb"><img src="${thumbnail}"/></div>
+                <span class="glyphicon glyphicon-triangle-${arrow} ${color}"></span><br/>
+                <p>${sentiment.score}</p>
+            </div>
+            <div class="mention-content">
+                <a target="_blank" href="${url}">${title}</a>
+                <p>${time}</p>
+                ${body}<span> ...<a href="${url}">Read more</a></span>
+            </div>
+        </div>
+    </script>
+
+
+    <link rel="stylesheet" href="/css/gauge.css"/>
+    <link rel="stylesheet" href="/css/sentiment.css"/>
+    <script src="/js/gauge.js"></script>
+</div>
+</body>
+</html>

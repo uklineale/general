@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:fragment="percent">
+            <div class="center">
+                <span class="smallText">Out of </span><span id="mentionsToday"></span><span class="smallText"> press mentions <p id="offset"></p></span>
+                <link rel="stylesheet" href="/css/mentions.css"/>
+                <script src="/js/mentions.js"></script>
+                <div id="current">
+                    <div id="good"></div><span class="smallText">were positive</span>
+                    <div id="bad"></div><span class="smallText">were negative</span>
+                </div>
+                <br/>
+                <div id="pie"></div>
+                <link rel="stylesheet" href="/css/percent.css"/>
+                <script src="/js/percent.js"></script>
+                <script src="/js/pie.js"></script>
+            </div>
+        </div>
+    </body>
+</html>

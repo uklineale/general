@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:fragment="stock">
+            <div id="current-price">
+                <h3><span id="close"></span></h3>USD
+                <span id="arrow"></span><br/>
+                <span id="closeStamp"></span><br/>
+                <span id="stockAg">Deutsche Bank AG</span>
+            </div><br/>
+            <div id="stockChart"></div>
+            <div class="range">
+                <button class="btn stockBtn" id="oneDay">1 Day</button>
+                <button class="btn stockBtn" id="oneMonth">1 Month</button>
+                <button class="btn stockBtn" id="oneYear">1 Year</button>
+                <button class="btn stockBtn" id="fiveYears">5 Years</button>
+            </div>
+            <link rel="stylesheet" href="/css/stock.css"/>
+            <script src="/vendor/d3/d3.min.js"></script>
+            <script src="/js/stock.js"></script>
+        </div>
+    </body>
+</html>
